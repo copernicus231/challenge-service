@@ -1,0 +1,17 @@
+schema {
+  query: Query
+}
+
+type Query {
+     products(search : String!) : [Product]
+}
+
+type Product {
+     idp : Int !
+     brand : String
+     description : String
+     image: String
+     price: Int
+     newPrice: Int
+     isDiscount: Boolean
+}
