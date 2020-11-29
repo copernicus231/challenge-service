@@ -12,6 +12,12 @@ import graphql.kickstart.tools.GraphQLQueryResolver;
 import lombok.AllArgsConstructor;
 import org.negasoft.challenge.util.Utils;
 
+/**
+ * Public api in graphql in this case just provide query
+ * products base on specifications
+ * @author copernicus
+ *
+ */
 @Component
 @AllArgsConstructor
 public class Query implements GraphQLQueryResolver {
@@ -20,7 +26,7 @@ public class Query implements GraphQLQueryResolver {
 	ProductRepository repo;
 	
 	/**
-	 * 
+	 * method that gonna expose products() to graphql
 	 * @param search
 	 * @return
 	 */
@@ -33,7 +39,7 @@ public class Query implements GraphQLQueryResolver {
 			Product prod = repo.findByIdp(Integer.parseInt(search));
 			if(prod != null) {
 				List<Product> result = Collections.singletonList(prod);
-				return Utils.isPalindrome(search) ? Utils.ApplyDiscount(result) : result;
+				return Utils.isPalindrome(search) ? Utils.applyDiscount(result) : result;
 			}
 		}
 		
@@ -44,7 +50,7 @@ public class Query implements GraphQLQueryResolver {
 		
 		//Query products
 		List<Product> result = repo.findByDescriptionContainingIgnoreCaseOrBrandContainingIgnoreCase(search,search);
-		return Utils.isPalindrome(search) ? Utils.ApplyDiscount(result) : result;
+		return Utils.isPalindrome(search) ? Utils.applyDiscount(result) : result;
 	}	
 }
 

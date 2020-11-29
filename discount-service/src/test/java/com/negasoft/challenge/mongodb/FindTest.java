@@ -19,6 +19,11 @@ import org.springframework.boot.test.autoconfigure.data.mongo.DataMongoTest;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
+/**
+ * Test for mongo db 
+ * @author copernicus
+ *
+ */
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @DataMongoTest
 @EnableMongoRepositories("org.negasoft.challenge.mongodb")
@@ -40,6 +45,7 @@ class FindTest {
 	        }
 		
 	}
+	
 	@Test
     void findByIdpTest() {
 		Product val = productRepository.findByIdp(181);

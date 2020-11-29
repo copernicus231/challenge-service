@@ -33,7 +33,7 @@ class UtilsTest {
 	
 	@Test
 	void discountApplyTest() {
-		List<Product> result = Utils.ApplyDiscount(products);
+		List<Product> result = Utils.applyDiscount(products);
 		assertEquals(5,result.size());
 		for (Product product : result) {
 			assertNotNull(product.getNewPrice());
@@ -43,7 +43,7 @@ class UtilsTest {
 	
 	@Test
 	void discountResultTest() {
-		List<Product> result = Utils.ApplyDiscount(products);
+		List<Product> result = Utils.applyDiscount(products);
 		int count = 0;
 		for (Product product : result) {
 			assertEquals(pricesDiscount.get(count++), product.getNewPrice());

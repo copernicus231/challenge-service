@@ -19,6 +19,12 @@ import com.graphql.spring.boot.test.GraphQLResponse;
 import com.graphql.spring.boot.test.GraphQLTest;
 import com.graphql.spring.boot.test.GraphQLTestTemplate;
 
+/**
+ * Test for end point disable due a problem
+ * with junit5 TODO check this test
+ * @author copernicus
+ *
+ */
 @Disabled
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @ExtendWith(SpringExtension.class)

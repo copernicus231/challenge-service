@@ -4,18 +4,19 @@ import java.util.List;
 
 import org.negasoft.challenge.mongodb.Product;
 /**
- * 
+ * Utils for app
  * @author copernicus
  *
  */
 public interface Utils {
 	
 	/**
-	 * 
+	 * Apply discount of 50% to all products on list
+	 * it modified the original list
 	 * @param products List of products that must be discount
-	 * @return
+	 * @return discounted list of products 
 	 */
-	public static List<Product> ApplyDiscount(List<Product> products) {
+	public static List<Product> applyDiscount(List<Product> products) {
 		for(Product prod : products) {
 			prod.setIsDiscount(true);
 			prod.setNewPrice(prod.getPrice()/2);
