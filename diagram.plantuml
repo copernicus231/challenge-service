@@ -1,0 +1,29 @@
+@startuml
+actor User as User
+
+cloud "mongodb atlas" as atlas{
+	database "cluster0.43ml0.mongodb.net" <<Database>>as db{
+		entity products
+	}
+}
+cloud Heroku as heroku {
+node "https://fast-dusk-49022.herokuapp.com/graphql" <<Container>>{
+	artifact "discount-service" as graphService {
+		stack "spring-boot"
+		stack "spring-data-mongo"
+		stack "graphql-java"	
+	}
+}
+
+node "https://shielded-plateau-90749.herokuapp.com" <<Container>>{
+	artifact "discount-app" as reactApp{
+		stack reactjs
+		stack "apollo-react"
+	}
+
+}
+User -> reactApp
+reactApp --> graphService
+graphService --> db
+
+@enduml
