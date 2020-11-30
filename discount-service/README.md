@@ -9,7 +9,7 @@ API expose was implementing using graphql on deployment is include **graphiql** 
 git clone https://github.com/copernicus231/challenge-service.git
 cd challenge-service/discount-service/
 mvn clean package
-export MONGODB_URI="mongodb+srv://\<user\>:\<password\>@cluster0.43ml0.mongodb.net/promotions?retryWrites=true&w=majority"
+export MONGODB_URI="mongodb+srv://<user>:<password>@cluster0.43ml0.mongodb.net/promotions?retryWrites=true&w=majority"
 export MONGODB_DATABASE="promotions"
 java -jar target/discount-service-0.0.1-SNAPSHOT.jar 
 ```
@@ -26,7 +26,7 @@ Get app name <app-id>
 ```bash
 mvn clean package 
 docker build -t discount-service .
-export MONGODB_URI="mongodb+srv://\<user\>:\<password\>@cluster0.43ml0.mongodb.net/promotions?retryWrites=true&w=majority"
+export MONGODB_URI="mongodb+srv://<user>:<password>@cluster0.43ml0.mongodb.net/promotions?retryWrites=true&w=majority"
 export MONGODB_DATABASE="promotions"
 docker run -e MONGODB_URI -e MONGODB_DATABASE -d -p 8080:8080 --name service1 discount-service
 ```
@@ -49,12 +49,12 @@ query getProducts($search : String = "181"){
 docker container stop service1
 ```
 ```bash
-heroku config:set MONGODB_URI="mongodb+srv://\<user\>:\<password\>@cluster0.43ml0.mongodb.net/promotions?retryWrites=true&w=majority" --app \<app-id\>
-heroku config:set MONGODB_DATABASE="promotions" --app \<app-id\>
-heroku config --app \<app-id\>
+heroku config:set MONGODB_URI="mongodb+srv://<user>:<password>@cluster0.43ml0.mongodb.net/promotions?retryWrites=true&w=majority" --app \<app-id\>
+heroku config:set MONGODB_DATABASE="promotions" --app <app-id>
+heroku config --app <app-id>
 heroku container:login
-heroku container:push web --app \<app-id\>
-heroku container:release web --app  \<app-id\>
+heroku container:push web --app <app-id>
+heroku container:release web --app <app-id>
 ```
 
 Just for verify use endpoing graphiql **https://\<app-id\>.herokuapp.com/graphiql** 
