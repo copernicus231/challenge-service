@@ -1,5 +1,5 @@
 # Overal service deployment diagram
-![DIAGRAM](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/copernicus231/challenge-service/master/diagram.plantuml)
+![DIAGRAM](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/copernicus231/challenge-service/master/diagram.plantuml)
 
 # [DISCOUNT SERVICE](https://github.com/copernicus231/challenge-service/tree/master/discount-service)
 
