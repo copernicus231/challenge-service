@@ -57,7 +57,7 @@ heroku container:push web --app \<app-id\>
 heroku container:release web --app  \<app-id\>
 ```
 
-Just for verify use endpoing graphiql **https://<app-id>.herokuapp.com/graphiql** 
+Just for verify use endpoing graphiql **https://\<app-id\>.herokuapp.com/graphiql** 
 
 Verify deployment with graphql query end point for client app use is on graphql(**https://\<app-id\>.herokuapp.com/graphql**) and not graphiql  
 
